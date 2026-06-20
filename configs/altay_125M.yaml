@@ -1,0 +1,25 @@
+model:
+  vocab_size: 32000
+  hidden_dim: 768
+  intermediate_dim: 2048
+  num_layers: 12
+  num_attention_heads: 12
+  num_kv_heads: 4
+  max_seq_len: 2048
+  rope_theta: 10000.0
+  rms_norm_eps: 1e-6
+  dropout: 0.0
+  name: "altay-125M"
+
+training:
+  batch_size: 8
+  gradient_accumulation_steps: 2
+  learning_rate: 3e-4
+  min_lr: 3e-5
+  weight_decay: 0.1
+  warmup_steps: 1000
+  max_steps: 50000
+  save_steps: 5000
+  log_steps: 10
+  grad_clip: 1.0
+  seed: 42
