@@ -25,7 +25,10 @@ from huggingface_hub import HfApi, login, create_repo
 from google.colab import userdata
 from getpass import getpass
 
-HF_TOKEN = userdata.get("HF_TOKEN")
+try:
+    HF_TOKEN = userdata.get("HF_TOKEN")
+except Exception:
+    HF_TOKEN = None
 if not HF_TOKEN:
     HF_TOKEN = getpass("🤗 Hugging Face token'ını yapıştır ve Enter'a bas: ")
     try:
